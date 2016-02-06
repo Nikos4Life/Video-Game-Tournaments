@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+5.times do
+	tournament = Tournament.create(name: "Tournament: "+Faker::Name.name)
+	10.times do
+		player = Player.create(name: Faker::Name.name)
+		tournament.players.push(player)
+	end
+end
