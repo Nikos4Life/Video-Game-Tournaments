@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   get '/' => 'tournaments#index'
 
+  namespace :api do
+    namespace :v1 do
+      # resources :players, except: [:new, :edit] do
+      #   resources :tasks, except: [:new, :edit]
+      #   post 'tasks/:id/complete', to: 'tasks#complete'
+      # end
+      resources :tournaments, except: [:new, :edit]
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
