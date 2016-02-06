@@ -8,7 +8,7 @@ function createTournament (event) {
   var $form = $('[data-hook~=tourney-form]')
   var $formAlerts = $('[data-hook~=form-alerts]')
   var data = $form.serialize()
-  var request = $.post('/api/tournaments', data)
+  var request = $.post('/api/v1/tournaments', data)
   request.fail(showError)
   request.done(respondNewTourney)
 
